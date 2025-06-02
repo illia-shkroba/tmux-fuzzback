@@ -36,6 +36,7 @@ finder_split_cmd() {
     --layout="$finder_layout" \
     --no-multi \
     --print-query \
+    --scheme history \
     --with-nth="3.." \
     --color="$4" \
     --preview="$CURRENT_DIR/preview.sh $CAPTURE_FILENAME {}" \
