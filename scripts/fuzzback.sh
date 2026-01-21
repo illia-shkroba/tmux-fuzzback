@@ -29,14 +29,19 @@ finder_split_cmd() {
     finder='sk-tmux'
   fi
   "$finder" \
+    --scheme history \
+    --no-sort \
     --delimiter=":" \
     --ansi \
+    --height "${FZF_TMUX_HEIGHT:-40%}" \
+    --min-height 20+ \
+    --highlight-line \
+    --wrap \
+    --wrap-sign ' ↳ ' \
     --bind="$1" \
-    --delimiter=":" \
     --layout="$finder_layout" \
     --no-multi \
     --print-query \
-    --scheme history \
     --with-nth="3.." \
     --color="$4" \
     --preview="$CURRENT_DIR/preview.sh $CAPTURE_FILENAME {}" \
